@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Pick Your Dream Team</h1>
+      <h1 className="heading">Pick Your Dream Team</h1>
       <div className="poke-grid">
         {pokemons?.map((pokemon) => (
           <PokeCard key={pokemon.id} pokemon={pokemon} />

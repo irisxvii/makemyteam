@@ -29,7 +29,7 @@ export interface Pokemon{
 
 export const fetchPokemon = async ():
 Promise<Pokemon[]> => {
-    const limit = 100;
+    const limit = 500;
     const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon?limit=${limit}`
     )

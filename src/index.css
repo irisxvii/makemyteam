@@ -11,7 +11,28 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.heading{
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px;
+}
+
+.poke-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 50px;
+  padding: 20px;
+}
+
+.poke-card {
+  background-color: #333;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #444;
+  height: 150px;
+  display: flex;
 }
