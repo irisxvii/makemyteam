@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { fetchPokemon} from "./api/fetchPokemon"
 import type { Pokemon } from "./api/fetchPokemon"
 import PokeCard from "./components/PokeCard"
+import { useState } from "react"
 
 const App = () => {
   const {data: pokemons} =
@@ -10,12 +11,24 @@ const App = () => {
     queryFn: fetchPokemon,
   })
 
+  const [team, setTeam] = useState<Pokemon[]>([])
+  const addToTeam = (pokemon: Pokemon) => {
+    if (team.length < 6) {
+      setTeam((prev) => [...prev, pokemon])
+    } else {
+      alert("you can only have 6 pokemons in your team")
+    }
+  }
+
   return (
     <div>
       <h1 className="heading">Pick Your Dream Team</h1>
       <div className="poke-grid">
         {pokemons?.map((pokemon) => (
-          <PokeCard key={pokemon.id} pokemon={pokemon} />
+          <PokeCard 
+            key={pokemon.id} 
+            pokemon={pokemon}
+            onClick={addToTeam} />
         ))}
 
       </div>

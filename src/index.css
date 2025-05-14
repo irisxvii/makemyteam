@@ -38,6 +38,15 @@ body {
   align-items: center;
   position: relative;
   padding-top: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poke-card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-color: #666;
+  background-color: rgb(52, 48, 48)
 }
 
 .poke-card img {
