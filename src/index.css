@@ -16,16 +16,15 @@ body {
 }
 
 .heading{
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin: 20px;
 }
 
 .poke-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 50px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 40px;
+  padding: 20px 50px;
 }
 
 .poke-card {
@@ -33,6 +32,34 @@ body {
   border-radius: 10px;
   text-align: center;
   border: 2px solid #444;
-  height: 150px;
+  height: 75px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+}
+
+.poke-card img {
+  position: absolute;
+  top: -40px;
+  height: 140px;
+}
+
+.poke-card h3 {
+  margin: 16px 0 4px;
+  font-size: 15px;
+}
+
+.poke-card div {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.poke-card span {
+  font-size: 12px;
+  background-color: #555;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
