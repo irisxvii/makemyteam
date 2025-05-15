@@ -43,7 +43,7 @@ body {
 }
 
 .poke-card:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   border-color: #666;
   background-color: rgb(52, 48, 48)
@@ -71,4 +71,31 @@ body {
   background-color: #555;
   padding: 2px 6px;
   border-radius: 4px;
+}
+
+.team-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-top: 2px solid #444;
+}
+
+.team-member{
+  background-color: rgb(52, 48, 48);
+  border: 2px solid #666;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100px;
+}
+
+.team-member img{
+  height: 80px;
+  margin-bottom: -26px;
+}
+
+.team-member h4{
+  margin-bottom: 0;
 }

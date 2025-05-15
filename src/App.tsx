@@ -20,15 +20,29 @@ const App = () => {
     }
   }
 
+  const teamIds = team.map((p) => p.id)
+
   return (
     <div>
       <h1 className="heading">Pick Your Dream Team</h1>
+
+      <div className="team-section">
+        {team.map((pokemon) => (
+          <div key={pokemon.id} className="team-member">
+            <img src={pokemon.sprites.other['official-artwork'].front_default} 
+            alt={pokemon.name} />
+            <h4>{pokemon.name}</h4>
+      </div>
+        ))}
+      </div>
+
       <div className="poke-grid">
         {pokemons?.map((pokemon) => (
           <PokeCard 
             key={pokemon.id} 
             pokemon={pokemon}
-            onClick={addToTeam} />
+            onClick={addToTeam}
+            disabled={teamIds.includes(pokemon.id)} />
         ))}
 
       </div>
