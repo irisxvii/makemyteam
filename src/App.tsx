@@ -23,18 +23,9 @@ const App = () => {
   const teamIds = team.map((p) => p.id)
 
   return (
-    <div>
+    <div className="page-layout">
+      <div className="left-scroll">
       <h1 className="heading">Pick Your Dream Team</h1>
-
-      <div className="team-section">
-        {team.map((pokemon) => (
-          <div key={pokemon.id} className="team-member">
-            <img src={pokemon.sprites.other['official-artwork'].front_default} 
-            alt={pokemon.name} />
-            <h4>{pokemon.name}</h4>
-      </div>
-        ))}
-      </div>
 
       <div className="poke-grid">
         {pokemons?.map((pokemon) => (
@@ -44,8 +35,21 @@ const App = () => {
             onClick={addToTeam}
             disabled={teamIds.includes(pokemon.id)} />
         ))}
-
       </div>
+      </div>
+
+      <div className="right-static">
+      <h2>Your Team</h2>
+      <div className="team-section">
+        {team.map((pokemon) => (
+          <div key={pokemon.id} className="team-member">
+            <img src={pokemon.sprites.other['official-artwork'].front_default} 
+            alt={pokemon.name} />
+            <h4>{pokemon.name}</h4>
+      </div>
+        ))}
+      </div>
+    </div>
     </div>
   )
 }

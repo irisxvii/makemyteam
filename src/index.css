@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1e1e1e;
 }
 
 body {
@@ -98,4 +98,25 @@ body {
 
 .team-member h4{
   margin-bottom: 0;
+}
+
+.page-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.left-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.right-static {
+  width: 500px;
+  background-color: #1e1e1e;
+  padding: 20px 0;
+}
+
+.right-static h2 {
+  text-align: center;
+  margin-top: 0;
 }
