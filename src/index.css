@@ -121,3 +121,10 @@ body {
   text-align: center;
   margin-top: 0;
 }
+
+.placeholder{
+  height: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

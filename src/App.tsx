@@ -26,14 +26,28 @@ const App = () => {
     <div className="page-layout">
       <div className="right-static">
       <h2>Your Team</h2>
+
       <div className="team-section">
-        {team.map((pokemon) => (
-          <div key={pokemon.id} className="team-member">
-            <img src={pokemon.sprites.other['official-artwork'].front_default} 
-            alt={pokemon.name} />
-            <h4>{pokemon.name}</h4>
-      </div>
-        ))}
+      {[...Array(6)].map((_, i) => {
+        const member = team[i]
+        return (
+          <div key={i} className="team-member">
+            {member ? (
+              <>
+                <img
+                  src={member.sprites.other['official-artwork'].front_default}
+                  alt={member.name}
+                />
+                <h4>{member.name}</h4>
+              </>
+            ) : (
+              <div className="placeholder">
+                <p>-</p>
+              </div>
+            )}
+          </div>
+    )
+  })}
       </div>
     </div>
 
