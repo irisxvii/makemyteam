@@ -22,6 +22,7 @@ const App = () => {
 
   const teamIds = team.map((p) => p.id)
   const [search, setSearch] = useState("")
+  const [selectedType, setSelectedType] = useState("")
 
   return (
     <div className="page-layout">
@@ -57,6 +58,7 @@ const App = () => {
       <p className="subheading">
         Click on any Pokemon to add it to your team. You can choose up to 6</p>
 
+      <div className="filter">
       <input
         type="text"
         placeholder="Search for a Pokemon"
@@ -65,8 +67,34 @@ const App = () => {
         onChange={(e) => setSearch(e.target.value)}
       />
 
+      <select className="dropdown" value={selectedType}
+        onChange={(e) => setSelectedType(e.target.value)}>
+        <option value="">All Types</option>
+        <option value="grass">Grass</option>
+        <option value="fire">Fire</option>
+        <option value="water">Water</option>
+        <option value="bug">Bug</option>
+        <option value="normal">Normal</option>
+        <option value="poison">Poison</option>
+        <option value="electric">Electric</option>
+        <option value="ground">Ground</option>
+        <option value="fairy">Fairy</option>
+        <option value="fighting">Fighting</option>
+        <option value="psychic">Psychic</option>
+        <option value="rock">Rock</option>
+        <option value="ghost">Ghost</option>
+        <option value="ice">Ice</option>
+        <option value="dragon">Dragon</option>
+        <option value="dark">Dark</option>
+        <option value="steel">Steel</option>
+        <option value="flying">Flying</option>
+      </select>
+      </div>
+
       <div className="poke-grid">
-        {pokemons?.filter((p) => p.name.toLowerCase().includes(search))
+        {pokemons?.filter(
+          (p) => p.name.toLowerCase().includes(search) &&
+          (selectedType === "" || p.types.some((t) => t.type.name === selectedType)))
           .map((pokemon) => (
           <PokeCard 
             key={pokemon.id} 
