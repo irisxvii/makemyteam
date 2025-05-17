@@ -35,10 +35,16 @@ const TeamStats: React.FC<Props> = ({ team }) => {
 
     return(
         <div className="team-stats">
-            <h3>Total Stats</h3>
+            <h3>Average Team Stats</h3>
             {statKeys.map((statName) => (
                 <div key={statName} className="stat-row">
-                    <span>{statName}</span> <span>{averageStats[statName]}</span>
+                    <span>{statName}</span>
+                    <div className="stat-container">
+                        <div className="stat-fill"
+                        style={{ width: `${(averageStats[statName] / 225) * 100}%` }}>
+                        </div>
+                    </div>
+                    <span>{averageStats[statName]}</span>
                 </div>
             ))}
         </div>
