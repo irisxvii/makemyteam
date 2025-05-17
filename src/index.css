@@ -83,7 +83,7 @@ body {
 
 .team-member{
   background-color: #333;
-  border: 2px solid #666;
+  border: 2px solid #444;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
@@ -125,6 +125,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #888;
 }
 
 .subheading{
@@ -160,4 +161,15 @@ body {
   height: 37px;
   border: 1px solid #666;
   border-radius: 8px;
+}
+
+.team-stats{
+  padding: 0 50px;
+  margin-top: -15px;
+}
+
+.stat-row{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }

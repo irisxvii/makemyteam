@@ -3,6 +3,7 @@ import { fetchPokemon} from "./api/fetchPokemon"
 import type { Pokemon } from "./api/fetchPokemon"
 import PokeCard from "./components/PokeCard"
 import { useState } from "react"
+import TeamStats from "./components/TeamStats"
 
 const App = () => {
   const {data: pokemons} =
@@ -51,6 +52,7 @@ const App = () => {
     )
   })}
       </div>
+      {team.length > 0 && <TeamStats team={team}/>}
     </div>
 
       <div className="left-scroll">
