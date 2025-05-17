@@ -52,7 +52,7 @@ const App = () => {
     )
   })}
       </div>
-      {team.length > 0 && <TeamStats team={team}/>}
+      <TeamStats team={team}/>
     </div>
 
       <div className="left-scroll">

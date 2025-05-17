@@ -4,14 +4,13 @@ interface Props {
     team: Pokemon[];
 }
 
+const statKeys = ['hp', 'attack', 'defense', 'speed'];
 const TeamStats: React.FC<Props> = ({ team }) => {
     const calculateTeamStats = (team: Pokemon[]) => {
         const totalStats: Record<string, number> = {
             hp: 0,
             attack: 0,
             defense: 0,
-            "special-attack": 0,
-            "special-defense": 0,
             speed: 0,
         }
 
@@ -25,21 +24,21 @@ const TeamStats: React.FC<Props> = ({ team }) => {
         })
 
         const averageStats: Record<string, number> = {};
-        Object.entries(totalStats).forEach(([key, val]) => {
-            averageStats[key] = team.length > 0 ? Math.round(val / team.length) : 0;
+        statKeys.forEach((key) => {
+            averageStats[key] = team.length > 0 ? Math.round(totalStats[key] / team.length) : 0;
         })
 
-        return { totalStats, averageStats };
+        return averageStats;
     }
 
-    const { totalStats, averageStats } = calculateTeamStats(team);
+    const averageStats = calculateTeamStats(team);
 
     return(
         <div className="team-stats">
             <h3>Total Stats</h3>
-            {Object.entries(totalStats).map(([statName, total]) => (
+            {statKeys.map((statName) => (
                 <div key={statName} className="stat-row">
-                    <span>{statName}</span> <span>{total} (avg: {averageStats[statName]})</span>
+                    <span>{statName}</span> <span>{averageStats[statName]}</span>
                 </div>
             ))}
         </div>
