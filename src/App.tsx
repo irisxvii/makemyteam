@@ -21,6 +21,7 @@ const App = () => {
   }
 
   const teamIds = team.map((p) => p.id)
+  const [search, setSearch] = useState("")
 
   return (
     <div className="page-layout">
@@ -53,9 +54,20 @@ const App = () => {
 
       <div className="left-scroll">
       <h1 className="heading">Pick Your Dream Team</h1>
+      <p className="subheading">
+        Click on any Pokemon to add it to your team. You can choose up to 6</p>
+
+      <input
+        type="text"
+        placeholder="Search for a Pokemon"
+        className="search-bar"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
       <div className="poke-grid">
-        {pokemons?.map((pokemon) => (
+        {pokemons?.filter((p) => p.name.toLowerCase().includes(search))
+          .map((pokemon) => (
           <PokeCard 
             key={pokemon.id} 
             pokemon={pokemon}

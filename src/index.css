@@ -46,7 +46,6 @@ body {
   transform: scale(1.05);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   border-color: #666;
-  background-color: rgb(52, 48, 48)
 }
 
 .poke-card img {
@@ -83,7 +82,7 @@ body {
 }
 
 .team-member{
-  background-color: #444;
+  background-color: #333;
   border: 2px solid #666;
   padding: 10px;
   border-radius: 8px;
@@ -114,7 +113,6 @@ body {
   width: 500px;
   padding: 20px 0;
   border-right: 2px solid #555;
-  background-color: #2a2a2a;
 }
 
 .right-static h2 {
@@ -127,4 +125,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.subheading{
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
+.search-bar{
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto 30px;
+  padding: 8px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: block;
 }
