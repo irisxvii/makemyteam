@@ -165,14 +165,14 @@ body {
 
 .team-stats{
   padding: 0 50px;
-  margin-top: -15px;
+  margin-top: -10px;
 }
 
 .stat-row{
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .stat-container{
@@ -187,4 +187,16 @@ body {
   height: 100%;
   background-color: #00c853;
   transition: width 0.3s ease-in-out;
+}
+
+.type-effectiveness {
+  padding: 0 50px;
+}
+
+.type-effectiveness span {
+  margin: 0 8px 7px;
+  display: inline-block;
+  padding: 3px 6px;
+  border: #444 solid 1px;
+  border-radius: 8px;
 }
