@@ -23,6 +23,10 @@ const App = () => {
     }
   }
 
+  const removeFromTeam = (index: number) => {
+    setTeam((prev) => prev.filter((_, i) => i !== index))
+  }
+
   const teamIds = team.map((p) => p.id)
   const [search, setSearch] = useState("")
   const [selectedType, setSelectedType] = useState("")
@@ -44,10 +48,16 @@ const App = () => {
                   alt={member.name}
                 />
                 <h4>{member.name}</h4>
+                <button 
+                  className="remove-button"
+                  onClick={() => removeFromTeam(i)}
+                >
+                  ×
+                </button>
               </>
             ) : (
               <div className="placeholder">
-                <p>-</p>
+                <p>x</p>
               </div>
             )}
           </div>
