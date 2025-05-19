@@ -243,3 +243,115 @@ body {
   margin-top: 2rem;
   color: #888;
 }
+
+@media screen and (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .right-static {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #555;
+    padding: 10px;
+    overflow-y: visible;
+  }
+
+  .left-scroll {
+    overflow-y: visible;
+    padding-bottom: 20px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    padding: 0 20px;
+    margin-bottom: 15px;
+  }
+
+  .filter {
+    flex-direction: column;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .search-bar, .dropdown {
+    width: 100%;
+  }
+
+  .poke-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 10px 20px;
+  }
+
+  .team-section {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .team-member {
+    width: 70px;
+    height: 70px;
+  }
+
+  .team-member img {
+    height: 50px;
+    margin-bottom: -20px;
+  }
+
+  .team-stats, .type-effectiveness {
+    padding: 0 15px;
+  }
+
+  .stat-row {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .poke-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .poke-card {
+    height: 65px;
+    padding-top: 70px;
+  }
+
+  .poke-card img {
+    height: 120px;
+    top: -35px;
+  }
+
+  .team-member {
+    width: 60px;
+    height: 60px;
+  }
+
+  .team-member img {
+    height: 45px;
+    margin-bottom: -15px;
+  }
+
+  .heading {
+    font-size: 1.3rem;
+    margin-top: 15px;
+  }
+
+  .subheading {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .filter {
+    margin-bottom: 15px;
+  }
+}
