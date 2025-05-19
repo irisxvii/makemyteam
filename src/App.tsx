@@ -30,6 +30,21 @@ const App = () => {
   const teamIds = team.map((p) => p.id)
   const [search, setSearch] = useState("")
   const [selectedType, setSelectedType] = useState("")
+  const [draggedPokemon, setDraggedPokemon] = useState<number | null>(null)
+
+  const onDragStart = (index: number) => {
+  setDraggedPokemon(index)
+  }
+
+  const onDrop = (dropIndex: number) => {
+    if (draggedPokemon === null) return
+    const newTeam = [...team]
+    const pokemonToMove = newTeam[draggedPokemon]
+    newTeam.splice(draggedPokemon, 1)
+    newTeam.splice(dropIndex, 0, pokemonToMove)
+    setTeam(newTeam)
+    setDraggedPokemon(null)
+  }
 
   return (
     <div className="page-layout">
@@ -40,7 +55,12 @@ const App = () => {
       {[...Array(6)].map((_, i) => {
         const member = team[i]
         return (
-          <div key={i} className="team-member">
+          <div key={i} className="team-member"
+          draggable={!!member}
+          onDragStart={() => onDragStart(i)}
+          onDragOver={(e) => e.preventDefault()}
+          onDrop={() => onDrop(i)}
+          >
             {member ? (
               <>
                 <img

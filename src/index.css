@@ -93,6 +93,7 @@ body {
   border-radius: 8px;
   text-align: center;
   width: 100px;
+  height: 100px;
 }
 
 .team-member img{
@@ -102,6 +103,14 @@ body {
 
 .team-member h4{
   margin-bottom: 0;
+}
+
+.team-member:not(.placeholder){
+  cursor: grab;
+}
+
+.team-member:not(.placeholder):active{
+  cursor: grabbing;
 }
 
 .remove-button {
@@ -138,6 +147,7 @@ body {
   width: 500px;
   padding: 20px 0;
   border-right: 2px solid #555;
+  overflow-y: hidden;
 }
 
 .right-static h2 {
