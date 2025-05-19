@@ -140,7 +140,7 @@ body {
 
 .left-scroll {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .right-static {
@@ -234,4 +234,12 @@ body {
   padding: 3px 6px;
   border: #444 solid 1px;
   border-radius: 8px;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  color: #888;
 }

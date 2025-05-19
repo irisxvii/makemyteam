@@ -8,7 +8,7 @@ import TypeEffectiveness from "./components/TypeEffectiveness"
 import TypeDropdown from "./components/TypeDropdown"
 
 const App = () => {
-  const {data: pokemons} =
+  const {data: pokemons, isLoading} =
   useQuery<Pokemon[]>({
     queryKey: ["pokemons"],
     queryFn: fetchPokemon,
@@ -89,6 +89,7 @@ const App = () => {
       </div>
 
       <div className="left-scroll">
+        <div className="content-wrapper">
       <h1 className="heading">Pick Your Dream Team</h1>
       <p className="subheading">
         Click on any Pokemon to add it to your team. You can choose up to 6</p>
@@ -109,6 +110,9 @@ const App = () => {
 
       </div>
 
+      {isLoading ? (
+        <div className="loading">Loading Pokemon...</div>
+      ) : (
       <div className="poke-grid">
         {pokemons?.filter(
           (p) => p.name.toLowerCase().includes(search) &&
@@ -120,6 +124,8 @@ const App = () => {
             onClick={addToTeam}
             disabled={teamIds.includes(pokemon.id)} />
         ))}
+      </div>
+      )}
       </div>
       </div>
     </div>
