@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from 'react';
 import { useQuery } from "@tanstack/react-query"
 import { fetchPokemon} from "./api/fetchPokemon"
 import type { Pokemon } from "./api/fetchPokemon"
